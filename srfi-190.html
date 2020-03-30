@@ -94,7 +94,7 @@ Marc Nieper-Wißkirchen
 </p>
 
 <p>The following defines a procedure that returns a generator
-  producing the series 0, 1, …, n - 1.</p>
+  producing the series 0, 1, …, n − 1.</p>
 
 <pre>
 (define-coroutine-generator (g n)
@@ -138,9 +138,15 @@ a coroutine generator.</p>
 <p><code>(define-coroutine-generator 〈name〉 〈body〉)</code></p>
 <p><code>(define-coroutine-generator (〈name〉 . 〈formals〉) 〈body〉)</code></p>
 
-<p>Expands into <code>(define 〈name〉 (coroutine-generator
-    〈body〉))</code> and <code>(define (〈name〉 . 〈formals〉)
-    (coroutine-generator 〈body〉))</code>, respectively.
+<p>Expands into
+
+  <pre>  (define 〈name〉 (coroutine-generator 〈body〉))</pre>
+
+and
+
+  <pre>  (define (〈name〉 . 〈formals〉) (coroutine-generator 〈body〉))</pre>
+
+respectively.
 </p>
 
 <h1>Implementation</h1>
@@ -160,9 +166,9 @@ a coroutine generator.</p>
     (syntax-case stx ()
       ((_ . body)
        #'(make-coroutine-generator
- (lambda (%yield)
-   (syntax-parameterize ((yield (identifier-syntax %yield)))
-     . body)))))))
+          (lambda (%yield)
+            (syntax-parameterize ((yield (identifier-syntax %yield)))
+              . body)))))))
 
 (define-syntax define-coroutine-generator
   (lambda (stx)
