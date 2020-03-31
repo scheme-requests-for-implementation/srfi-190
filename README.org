@@ -8,7 +8,7 @@ This repository hosts [[https://srfi.schemers.org/srfi-190/][SRFI 190]]: Corouti
 
 This SRFI is in /draft/ status.
 
-See also [[https://srfi.schemers.org/srfi-121/][SRFI 121: Generators]] and [[https://srfi.schemers.org/srfi-158/][SRFI 158: Generators and Accumulators]].
+See also [[https://srfi.schemers.org/srfi-121/][SRFI 121: Generators]], [[https://srfi.schemers.org/srfi-139/][SRFI 139: Syntax parameters]], and [[https://srfi.schemers.org/srfi-158/][SRFI 158: Generators and Accumulators]].
 
 The full documentation for this SRFI can be found in the [[https://srfi.schemers.org/srfi-190/srfi-190.html][SRFI Document]].
 
