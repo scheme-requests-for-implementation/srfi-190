@@ -118,6 +118,22 @@ Marc Nieper-Wißkirchen
   identifier <code>yield</code> is exported by any library implementing
   this SRFI (and bound to syntax).</p>
 
+<p> While the sample implementation uses syntax parameters and
+  identifier macros, a specific implementation that is being shipped
+  by a particular Scheme system doesn't have to.  In fact, this is a
+  reasonable thing for those systems, for which
+  <code>make-coroutine-generator</code> from SRFI 121/158 is slow
+  because <code>call/cc</code> is slow in these systems (unfortunately,
+  such systems exist). As <code>coroutine-generator</code> SRFI 190 is
+  just syntax and offers no more than Python's generator functions (note
+  that Python doesn't have <code>call/cc</code>), those systems can
+  translate it directly into fast code that does not have to rely on
+  first-class continuations. For this translation to be easy (and no
+  more difficult than that what CPython has to do), it is crucial that
+  <code>yield</code> is lexically scoped (and thus confined to the
+  expanded body of the coroutine) and not dynamically bound.
+</p>
+
 <h1>Specification</h1>
 
 <h2>Syntax</h2>
