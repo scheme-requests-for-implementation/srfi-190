@@ -65,7 +65,7 @@ Marc Nieper-Wißkirchen
   has to explicitly bind the name of the yielding procedure.</p>
 
 <p>In this SRFI, a syntax that evaluates to coroutine generators is
-  defined that simplies the creation of coroutine generators and
+  defined that simplifies the creation of coroutine generators and
   avoids the need of binding the yielding procedure to a name.</p>
 
 <p>Using the syntax of this SRFI, the above example becomes:</p>
@@ -115,13 +115,13 @@ Marc Nieper-Wißkirchen
 </pre>
 
 <p>All syntax defined in this SRFI is hygienic.  In particular, the
-  identifier <code>yield</code> is exported by any library implementing
-  this SRFI (and bound to syntax).</p>
+  identifier <code>yield</code> is exported (and bound to syntax) by
+  any library implementing this SRFI.</p>
 
 <p> While the sample implementation uses syntax parameters and
   identifier macros, a specific implementation that is being shipped
   by a particular Scheme system doesn't have to.  In fact, this is a
-  reasonable thing for those systems, for which
+  reasonable thing for those systems for which
   <code>make-coroutine-generator</code> from SRFI 121/158 is slow
   because <code>call/cc</code> is slow in these systems (unfortunately,
   such systems exist). As <code>coroutine-generator</code> SRFI 190 is
