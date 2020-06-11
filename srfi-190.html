@@ -134,40 +134,40 @@ Marc Nieper-Wißkirchen
 
 <h2>Syntax</h2>
 
-<p><code>(coroutine-generator 〈body〉)</code></p>
+<p><code>(coroutine-generator 〈body〉)</code></p>
 
 <p>Creates a generator from a coroutine.  When evaluated, immediately
 returns a generator <var>g</var>.  When <var>g</var> is called, the
-  definitions and expressions in <code>〈body〉</code> are evaluated
+  definitions and expressions in <code>〈body〉</code> are evaluated
   until the yielding procedure of the coroutine generator is called.
   Calling the yielding procedure of the coroutine generator causes the
-  evaluation of <code>〈body〉</code> to be suspended,
+  evaluation of <code>〈body〉</code> to be suspended,
   and <var>g</var> returns the value passed to yield.</p>
 
 <p>Whether this generator is finite or infinite depends on the
-  behavior of <code>〈body〉</code>. If the last expression
-  in <code>〈body〉</code> returns, it is the end of the sequence —
+  behavior of <code>〈body〉</code>. If the last expression
+  in <code>〈body〉</code> returns, it is the end of the sequence —
 <var>g</var>
   returns an end-of-file object from then on.</p>
 
 <p><code>yield</code></p>
 
 <p>Evaluates to the yielding procedure in the (expansion of the)
-  <code>〈body〉</code> of a coroutine generator.</p>
+  <code>〈body〉</code> of a coroutine generator.</p>
 
 <p>It is an error to evaluate <code>yield</code> outside the body of
 a coroutine generator.</p>
 
-<p><code>(define-coroutine-generator 〈name〉 〈body〉)</code></p>
-<p><code>(define-coroutine-generator (〈name〉 . 〈formals〉) 〈body〉)</code></p>
+<p><code>(define-coroutine-generator 〈name〉 〈body〉)</code></p>
+<p><code>(define-coroutine-generator (〈name〉 . 〈formals〉) 〈body〉)</code></p>
 
 <p>Expands into
 
-  <pre>  (define 〈name〉 (coroutine-generator 〈body〉))</pre>
+  <pre>  (define 〈name〉 (coroutine-generator 〈body〉))</pre>
 
 and
 
-  <pre>  (define (〈name〉 . 〈formals〉) (coroutine-generator 〈body〉))</pre>
+  <pre>  (define (〈name〉 . 〈formals〉) (coroutine-generator 〈body〉))</pre>
 
 respectively.
 </p>
