@@ -161,7 +161,7 @@ a coroutine generator.</p>
 <p><code>(define-coroutine-generator 〈name〉 〈body〉)</code></p>
 <p><code>(define-coroutine-generator (〈name〉 . 〈formals〉) 〈body〉)</code></p>
 
-<p>Expands into
+<p>Expands into</p>
 
   <pre>  (define 〈name〉 (coroutine-generator 〈body〉))</pre>
 
@@ -169,8 +169,7 @@ and
 
   <pre>  (define (〈name〉 . 〈formals〉) (coroutine-generator 〈body〉))</pre>
 
-respectively.
-</p>
+<p>respectively.</p>
 
 <h1>Implementation</h1>
 
